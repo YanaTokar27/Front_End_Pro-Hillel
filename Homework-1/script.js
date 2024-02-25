@@ -4,20 +4,22 @@ const secondNum = +prompt('Введіть друге число');
 const mathAction = `${firstNum} ${action} ${secondNum} = `;
 
 
-
-if (action === '+') {
-    const add = firstNum + secondNum;
-    // alert(mathAction + ' = ' + add)
-    alert(mathAction + add)
-} else if (action === '-') {
-    const sub = firstNum - secondNum;
-    alert(mathAction + sub)
-} else if (action === '*') {
-    const mult = firstNum * secondNum;
-    alert(mathAction + mult)
-} else if (action === '/') {
-    const div = firstNum / secondNum;
-    alert(mathAction + div)
+if (!isNaN(firstNum) && !isNaN(secondNum)) {
+    if (action === '+') {
+        const add = firstNum + secondNum;
+        alert(mathAction + add)
+    } else if (action === '-') {
+        const sub = firstNum - secondNum;
+        alert(mathAction + sub)
+    } else if (action === '*') {
+        const mult = firstNum * secondNum;
+        alert(mathAction + mult)
+    } else if (action === '/') {
+        const div = firstNum / secondNum;
+        alert(mathAction + div)
+    } else {
+        alert(`Дія (${action}) не підтримується`);
+    }
 } else {
-    alert('Ви ввели недопустимі значення')
+    alert('Для введення можна використовувати тільки цифри');
 }
