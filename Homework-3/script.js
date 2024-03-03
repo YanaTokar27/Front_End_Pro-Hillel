@@ -1,8 +1,8 @@
 const year = +prompt('Введіть Ваш рік народження');
 const city = prompt('В якому місті Ви живете?');
 const sport = prompt('Який Ваш улюблений вид спорту?');
-let finalText = '';
 const currentYear = new Date().getFullYear();
+let finalText = '';
 
 
 if (year && year < currentYear && year >= 1924) {
