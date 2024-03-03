@@ -2,28 +2,29 @@ const year = +prompt('Введіть Ваш рік народження');
 const city = prompt('В якому місті Ви живете?');
 const sport = prompt('Який Ваш улюблений вид спорту?');
 let finalText = '';
+const currentYear = new Date().getFullYear();
 
 
-if (year && year < 2024 && year >= 1924) {
-    const age = 2024 - year;
-    finalText += `Твій вік ${age} роки(ів), `;
+if (year && year < currentYear && year >= 1924) {
+    const age = currentYear - year;
+    finalText += `Твій вік ${age} роки(ів). `;
 }
 else {
-    alert('Шкода, що Ви не захотіли ввести свій рік народження')
+    finalText += ('Шкода, що Ви не захотіли ввести свій рік народження. ')
 }
 
 if (city) {
     if (city === 'Київ' && city) {
-        finalText += `ти живеш у столиці України, `;
+        finalText += `Ти живеш у столиці України. `;
     } else if (city === 'Вашингтон' && city) {
-        finalText += `ти живеш у столиці США, `;
+        finalText += `Ти живеш у столиці США. `;
     } else if (city === 'Лондон' && city) {
-        finalText += `ти живеш у столиці Англії, `;
+        finalText += `Ти живеш у столиці Англії. `;
     } else {
-        finalText += `ти живеш у місті ${city}, `;
+        finalText += `Ти живеш у місті ${city}. `;
     }
 } else {
-    alert('Шкода, що Ви не захотіли ввести місто у якому проживаєте');
+    finalText += ('Шкода, що Ви не захотіли ввести місто у якому проживаєте. ');
 }
 
 if (sport) {
@@ -34,10 +35,10 @@ if (sport) {
     } else if (sport === 'художня гімнастика') {
         finalText += 'Круто! Хочеш бути як Дарʼя Варфоломеєв?';
     } else {
-        finalText += `Чим привернув твою увагу цей ${sport}?`;
+        finalText += `Чим привернув твою увагу ${sport}?`;
     }
 } else {
-    alert('Шкода, що Ви не захотіли ввести свій улюблений вид спорту');
+    finalText += ('Шкода, що Ви не захотіли ввести свій улюблений вид спорту.');
 }
 
 alert(finalText);
