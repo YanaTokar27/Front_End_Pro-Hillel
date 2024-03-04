@@ -14,11 +14,11 @@ else {
 }
 
 if (city) {
-    if (city === 'Київ' && city) {
+    if (city === 'Київ') {
         finalText += `Ти живеш у столиці України. `;
-    } else if (city === 'Вашингтон' && city) {
+    } else if (city === 'Вашингтон') {
         finalText += `Ти живеш у столиці США. `;
-    } else if (city === 'Лондон' && city) {
+    } else if (city === 'Лондон') {
         finalText += `Ти живеш у столиці Англії. `;
     } else {
         finalText += `Ти живеш у місті ${city}. `;
