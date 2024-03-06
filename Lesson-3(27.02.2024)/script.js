@@ -324,6 +324,15 @@ const task21 = () => {          //Тренувальна задача - 7
     }
 }
 
+const task22 = () => {
+    const year = +prompt('Введіть рік');
+
+    if (year % 4 === 0) {
+        console.log('Рік високосний');
+    } else {
+        console.log('Рік звичайний');
+    }
+}
 
 
 // task1();
@@ -346,4 +355,5 @@ const task21 = () => {          //Тренувальна задача - 7
 // task18();
 // task19();
 // task20();
-task21();
+// task21();
+task22();
