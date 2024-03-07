@@ -56,9 +56,9 @@ const task4 = () => {
     }
 
     if (isPrime) {
-        console.log(a + ' просте число');
+        console.log(`${a} просте число`);
     } else {
-        console.log(a + ' непросте число');
+        console.log(`${a} непросте число`);
     }
 }
 
