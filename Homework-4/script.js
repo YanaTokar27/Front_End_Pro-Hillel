@@ -62,17 +62,10 @@ const task4 = () => {
     }
 }
 
-const task5 = () => {
+const task5v1 = () => {              //варіант-1
     const a = +prompt('Введіть число');
     let isSquar = true;
     let curr = a;
-
-    // for (let i = 3; i < a; i++) {
-    //     if (a / 3 === 0) {
-    //         isSquar = false;
-    //         break;
-    //     }
-    // }
 
     if (a) {
         while (curr > 1) {
@@ -91,27 +84,21 @@ const task5 = () => {
     } else {
         console.log('Введіть коректне число');
     }
-
 }
 
-// Дане деяке число
-let targetNumber = +prompt('enter number');
+const task5v2 = () => {           //варіант-2
+    let number = +prompt('enter number');
+    let currentNum = 3;
 
-// Починаємо з базового числа (3 в нульовій ступені)
-let currentNumber = 3;
-
-// Цикл для підняття числа 3 до ступеня, поки воно не перевищить задане число
-while (currentNumber < targetNumber) {
-    currentNumber *= 3; // Піднімаємо число 3 до наступного ступеня
+    while (currentNum < number) {
+        currentNum *= 3;
+    }
+    if (currentNum === number) {
+        console.log(targetNum + ' можна отримати, зведене до числа 3 у деякий ступінь.');
+    } else {
+        console.log(targetNum + ' не можна отримати, зведене до числа 3 у деякий ступінь.');
+    }
 }
-
-// Перевірка, чи задане число можна отримати
-if (currentNumber === targetNumber) {
-    console.log(targetNumber + ' можна отримати, зведене до числа 3 у деякий ступінь.');
-} else {
-    console.log(targetNumber + ' не можна отримати, зведене до числа 3 у деякий ступінь.');
-}
-
 
 
 // task1();
@@ -119,5 +106,6 @@ if (currentNumber === targetNumber) {
 // task2v2();
 // task3();
 // task4();
-// task5();
+// task5v1();
+// task5v2();
 
