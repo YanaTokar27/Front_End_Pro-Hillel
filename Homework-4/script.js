@@ -27,7 +27,7 @@ const task2v2 = () => {                  //варіант-2
 
     do {
         const cost = oneUSD * doll;
-        console.log(doll + ' USD = ' + cost + ' грн');
+        console.log(`${doll} USD = ${cost} грн`);
         doll += 10;
     } while (doll <= 100)
 }
@@ -77,9 +77,9 @@ const task5v1 = () => {              //варіант-1
         }
 
         if (isSquar) {
-            console.log(a + ' - є результатом зведення числа 3 у степінь');
+            console.log(`${a} - є результатом зведення числа 3 у степінь`);
         } else {
-            console.log(a + ' - не є результатом зведення числа 3 у степінь');
+            console.log(`${a} - не є результатом зведення числа 3 у степінь`);
         }
     } else {
         console.log('Введіть коректне число');
@@ -94,9 +94,9 @@ const task5v2 = () => {           //варіант-2
         currentNum *= 3;
     }
     if (currentNum === number) {
-        console.log(targetNum + ' можна отримати, зведене до числа 3 у деякий ступінь.');
+        console.log(`${targetNum} можна отримати, зведене до числа 3 у деякий ступінь.`);
     } else {
-        console.log(targetNum + ' не можна отримати, зведене до числа 3 у деякий ступінь.');
+        console.log(`${targetNum} не можна отримати, зведене до числа 3 у деякий ступінь.`);
     }
 }
 
