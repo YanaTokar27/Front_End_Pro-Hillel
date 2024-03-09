@@ -12,7 +12,7 @@ const task1 = () => {
     console.log(`${positiveArr.length} - позитивних елементів, їх сума - ${result}`);
 }
 
-const task23 = () => {
+const task2_3 = () => {
     const arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
     const min = Math.min(...arr);
     const max = Math.max(...arr);
@@ -39,7 +39,7 @@ const task4 = () => {
     console.log(`${negativeArr.length} - кількість негативних елементів`);
 }
 
-const task58 = () => {
+const task5_8 = () => {
     const arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
 
     const positiveArr = arr.filter(function (number) {
@@ -53,7 +53,7 @@ const task58 = () => {
     console.log(`${positiveArr.length} - кількість непарних позитивних елементів, ${result} - сума непарних позитивних елементів`);
 }
 
-const task67 = () => {
+const task6_7 = () => {
     const arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
 
     const positiveArr = arr.filter(function (number) {
@@ -94,12 +94,10 @@ const task10 = () => {
     console.log(arr);
 }
 
-
 task1();
-// task23();
+// task2_3();
 // task4();
-// task58();
-// task67();
+// task5_8();
+// task6_7();
 // task9();
 // task10();
-
