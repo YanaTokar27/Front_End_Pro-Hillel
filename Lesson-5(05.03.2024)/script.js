@@ -256,7 +256,7 @@ const task29 = () => {            //forEach - перебирає весь мас
 }
 
 const task30 = () => {          //filter - повертає масив з додатніми значеннями
-    let arr = [1, -1, 2, -2, 3, -6, 7];
+    let arr = [1, -1, 2, -2, 3, -6, 7, 0];
 
     let positiveArr = arr.filter(function (number) {
         return number > 0;
@@ -323,6 +323,7 @@ const task36 = () => {           //reduce - обробки кожного еле
         console.log(`${previous}, ${current}`);
         return previous + current;
     }, 0);
+
     console.log(`Result - ${result}`);
 }
 
@@ -336,6 +337,19 @@ const task37 = () => {
 
     console.log(`Result - ${result}`); // 15
 }
+
+const task38 = () => {
+    let arr = [9, 2, 0, 7, 5];
+
+    let result = arr.reduce(function (acc, current) {
+        console.log(acc);
+        return { money: acc.money + current };
+    }, { money: 0 });
+
+    console.log('Result', result);
+}
+
+
 
 
 
@@ -369,11 +383,12 @@ const task37 = () => {
 // task27();
 // task28();
 // task29();
-// task30();
+task30();
 // task31();
 // task32();
 // task33();
 // task34();
 // task35();
-task36();
+// task36();
 // task37();
+// task38();
