@@ -63,16 +63,13 @@ const task1 = () => {
 
     const phones = richUsers.map(user => user.phone);
 
-
     // const phones = users.filter(user => {
     //     const balance = Number(user.balance.slice(1).replace(',', ''));
     //     return balance > 2000
     //   }).map(user => user.phone);
 
 
-
     console.log(phones);
-
 
     const sum = users.reduce((previous, current) => {
         const balance = Number(current.balance.slice(1).replace(',', ''));
@@ -80,7 +77,6 @@ const task1 = () => {
     }, 0);
 
     console.log(sum.toFixed(2));
-
 
 
     // const richUsers = users.reduce((previous, user) => {
@@ -92,7 +88,6 @@ const task1 = () => {
     // }, []);
 
     // console.log(richUsers);
-
 }
 
 task1();
