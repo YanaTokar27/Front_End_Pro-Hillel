@@ -9,7 +9,7 @@ const task1 = () => {
         // return num *= pow(num, degree - 1)
     }
 
-    console.log(pow(8, 2));
+    console.log(pow(3, 3));
 }
 
 task1();
