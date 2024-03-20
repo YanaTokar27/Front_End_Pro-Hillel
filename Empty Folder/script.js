@@ -84,16 +84,16 @@ const task21 = () => {
 
 
 
-// task1();
-// task2();
-// task3();
-// task4();
-// task5();
-// task6();
-// task7();
-// task8();
-// task9();
-// task10();
+task1();
+task2();
+task3();
+task4();
+task5();
+task6();
+task7();
+task8();
+task9();
+task10();
 // task11();
 // task12();
 // task13();
@@ -104,4 +104,4 @@ const task21 = () => {
 // task18();
 // task19();
 // task20();
-task21();
+// task21();
