@@ -1,0 +1,11 @@
+.container {
+    max-width: 80%;
+    min-width: 360px;
+    margin: 20px;
+    text-align: center;
+}
+
+.block {
+    height: 1000px;
+}
+
