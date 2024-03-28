@@ -8,3 +8,9 @@
 input {
 margin-bottom: 15px;
 }
+
+#ghost {
+    background : green;
+    height : 50px;
+    width : 50px;
+}

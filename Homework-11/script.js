@@ -5,11 +5,6 @@ input.addEventListener('focus', function () {
     const ghost = document.createElement('div');
     ghost.setAttribute('id', 'ghost')
 
-    ghost.style.background = 'green';
-    ghost.style.height = '50px';
-    ghost.style.width = '50px';
-
-
     container.appendChild(ghost);
 })
 
