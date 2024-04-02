@@ -1,82 +1,91 @@
-< !DOCTYPE html>
-    <html lang="en">
+!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css" class="style">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" class="style">
+</head>
 
-    <body>
-        <div class="container">
-            <h1>Lesson-11</h1>
-            <h2>29.03.2024</h2>
-            <h2>Форми</h2>
-            <!-- <form><label for="fname">First name:</label><input type="text" id="fname"
-                    name="fname"><br><br><label>Last name: <input type="text" id="lname"
-                        name="lname"><br><br></label><label>Email <input type="email"
-                        name="email"></label><br><br><label>Week <input type="week"
-                        name="week"></label><br><br><label>Month <input type="month"
-                        name="month"></label><br><br><label>Enter data <input type="date"
-                        name="date"></label><br><br><label>Data/time <input type="datetime-local"
-                        name="date.time"></label><br><br><label>Чек-бокс <input
-                        type="checkbox"></label><br><br><label>Radio <input type="radio"
-                        name="radio"></label><br><br><label>Range <input type="range"
-                        name="range"></label><br><br><label>Search <input type="search"
-                        name="search"></label><br><br><label>Password <input type="password"
-                        name="password"></label><br><br><label>File <input type="file"></label><br><br><label>Enter text
-                    <textarea name="textarea" rows="5" cols="20"></textarea></label><br><br><input type="text"
-                    class="changeField" placeholder="change_Field"><input type="text" class="inputField"
-                    placeholder="input_Field"><input type="submit" value="Submit"><input type="reset"
-                    value="Reset"><br><br></form><select name="select" multiple>
-                    <option value="s1">-Select a Page-</option>
-                    <option value="s2">Home Page</option>
-                    <option value="s3">About Us</option>
-                    <option value="s4">Camping Tips</option>
-                </select><br /><br />
-                -->
+<body>
+    <div class="container">
+        <h1>Lesson-11</h1>
+        <h2>29.03.2024</h2>
+        <h2>Форми</h2>
+        <form>
+            <label for="fname">First name:
+
+            </label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label>Last name: <input type="text" id="lname" name="lname"><br><br></label>
+            <label>Email <input type="email" name="email"></label><br><br>
+            <label>Week <input type="week" name="week"></label><br><br>
+            <label>Month <input type="month" name="month"></label><br><br>
+            <label>Enter data <input type="date" name="date"></label><br><br>
+            <label>Data/time <input type="datetime-local" name="date.time"></label><br><br>
+            <label>Чек-бокс <input type="checkbox"></label><br><br>
+            <label>Radio
+                <input type="radio" name="radio"></label><br><br>
+            <label>Range <input type="range" name="range"></label><br><br>
+            <label>Search <input type="search" name="search"></label><br><br>
+            <label>Password <input type="password" name="password"></label><br><br>
+            <label>File <input type="file"></label><br><br>
+            <label>Enter text <textarea name="textarea" rows="5" cols="20"></textarea></label><br><br>
+            <input type="text" class="changeField" placeholder="change_Field">
+            <input type="text" class="inputField" placeholder="input_Field">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset"><br><br>
+        </form>
+
+        <select name="select" multiple>
+            <option value="s1">-Select a Page-</option>
+            <option value="s2">Home Page</option>
+            <option value="s3">About Us</option>
+            <option value="s4">Camping Tips</option>
+        </select><br /><br />
 
 
-            <form id="submit-person">
-                <label>Full name:
-                    <input type="text" name="full _name">
+
+        <form id="submit-person">
+            <label>Full name:
+                <input type="text" name="full _name">
+            </label><br /><br />
+            <label>Date of birth:
+                <input type="date" name="birth_date">
+            </label><br />
+            <div>
+                <p>Gender: </p>
+                <label>Male
+                    <input type="radio" name="gender" value="male">
+                </label>
+                <label>Female
+                    <input type="radio" name="gender" value="female">
                 </label><br /><br />
-                <label>Date of birth:
-                    <input type="date" name="birth_date">
-                </label><br />
-                <div>
-                    <p>Gender: </p>
-                    <label>Male
-                        <input type="radio" name="gender" value="male">
-                    </label>
-                    <label>Female
-                        <input type="radio" name="gender" value="female">
-                    </label><br /><br />
-                </div><label>Address: <input type="text" name="address">
-                </label><br />
-                <div>
-                    <p>Language: </p>
-                    <label>English <input type="checkbox" name="language" value="english">
-                    </label><br /><br />
-                    <label>
-                        Spanish
-                        <input type="checkbox" name="language" value="spanish">
-                    </label><br /><br />
-                    <label>Ukrainian
-                        <input type="checkbox" name="language" value="ukrainian">
-                    </label>
-                </div><br />
-                <label>Password
-                    <input type="password" name="password">
-                    <span><br><br>Password shouldn't be less than 4 letters</span>
+            </div><label>Address: <input type="text" name="address">
+            </label><br />
+            <div>
+                <p>Language: </p>
+                <label>English <input type="checkbox" name="language" value="english">
                 </label><br /><br />
-                <label>Repeat password <input type="password" name="repeat_password">
+                <label>
+                    Spanish
+                    <input type="checkbox" name="language" value="spanish">
                 </label><br /><br />
-                <input type="submit" value="submit">
-            </form>
-        </div>
-        <script src="script.js"></script>
-    </body>
+                <label>Ukrainian
+                    <input type="checkbox" name="language" value="ukrainian">
+                </label>
+            </div><br />
+            <label>Password
+                <input type="password" name="password">
+                <span><br><br>Password shouldn't be less than 4 letters</span>
+            </label><br /><br />
+            <label>Repeat password <input type="password" name="repeat_password">
+            </label><br /><br />
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
 
-    </html>
+</html>
