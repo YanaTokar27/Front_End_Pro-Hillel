@@ -1,7 +1,8 @@
 const backButton = document.querySelector('.back');
 
 backButton.addEventListener('click', function () {
-    location.href = 'index.html'
+    // location.href = 'index.html'
+    history.back();
 })
 
 console.log(screen);
