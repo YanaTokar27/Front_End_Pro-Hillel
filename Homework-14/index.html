@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" class="style">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Homework-14</h1>
+        <h2>Модифікувати програму інтернет-магазин</h2>
+        <div class="order">
+            <div class="item goods_card">
+                <div class="card"><img class="card_img" src="../Homework-14/img/20242b0_big.jpeg" alt="lamp"
+                        height="200px">
+                    <title class="card_title">Настільна лампа EGLO 83092</title>
+                    <p class="card_price">4 150 грн</p>
+                    <p class="card_price"></p>
+                    <button class="card_buy">Купити</button>
+                </div>
+            </div>
+
+
+            <div class="item data_buyer hiden">
+                <form class="inform_buyer">
+                    <label>ПІБ
+                        <input class="buyer" type="text" name="buyer">
+                    </label><br><br>
+                    <label>Місто
+                        <select name="city" class="city">
+                            <option></option>
+                            <option value="Київ">Київ</option>
+                            <option value="Дніпро">Дніпро</option>
+                            <option value="Харків">Харків</option>
+                            <option value="Одеса">Одеса</option>
+                            <option value="Львів">Львів</option>
+                            <option value="Трускавецьк">Трускавецьк</option>
+                        </select><br /><br />
+                    </label>
+                    <label>Склад Нової Пошти
+                        <input type="number" name="number_post" class="number_post" min="1">
+                    </label><br><br>
+                    <label>Оплата
+                        <select name="payment" class="payment">
+                            <option></option>
+                            <option value="Післяплата">Післяплата</option>
+                            <option value="Оплата банківською карткою">Оплата банківською карткою</option>
+                        </select>
+                    </label><br><br>
+                    <label>Кількість продукції
+                        <input type="number" class="number_goods" name="number_goods" min="1" max="100"></label><br><br>
+                    <textarea name="comment" placeholder="Комендар до Вашого замовлення"></textarea><br>
+                    <input type="submit" class="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

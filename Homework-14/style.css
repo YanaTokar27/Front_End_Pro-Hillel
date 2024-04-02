@@ -1,0 +1,84 @@
+.container {
+    max-width: 80%;
+    min-width: 360px;
+    margin: 20px;
+    text-align: center;
+}
+
+.card {
+    display: block;
+    width: 250px;
+    background-color: #9e9e8f;
+    padding: 17px 0;
+}
+
+.card_title {
+    display: block;
+    font-size: large;
+}
+
+.card_price {
+    font-size: large;
+    margin: 10px auto 0;
+}
+
+.card_img {
+    margin-bottom: 10px
+}
+
+.card_buy {
+    padding: 7px 40px;
+    background-color: rgb(243 245 249);
+    border-radius: 24px;
+    font-size: large;
+}
+
+textarea {
+    max-width: 300px;
+    max-height: 100px;
+    overflow: auto;
+    height: 100px;
+    width: 300px;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.item {
+    flex-grow: 1;
+    width: 50%;
+}
+
+.data_buyer {
+    padding: 5px 0;
+}
+
+.hiden {
+    display: none;
+}
+
+.goods_card {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.inform_buyer {
+    display: block;
+    text-align: start;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.submit {
+    padding: 7px 40px;
+    background-color: rgb(243 245 249);
+    border-radius: 24px;
+    font-size: large;
+    margin: 0 65px;
+}
