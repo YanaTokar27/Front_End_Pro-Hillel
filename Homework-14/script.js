@@ -29,12 +29,14 @@ inform_buyer.addEventListener('submit', function (event) {
 
 function validateInput(object) {
     let result = true;
+
     for (const [key, value] of Object.entries(object)) {
         const inputElement = document.querySelector(`.${key}`);
 
         if (!inputElement) {
             continue
         }
+
         if (!value) {
             inputElement.classList.add('error');
             result = false
@@ -64,11 +66,3 @@ function addTextToInfoOrder(infoOrder, text) {
     p.textContent = text;
     infoOrder.appendChild(p);
 }
-
-
-
-
-
-
-
-
