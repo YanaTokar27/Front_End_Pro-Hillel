@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" class="style">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Homework-15</h1>
+        <h2>Для форми з ДЗ (11 лекція) додати валідацію за допомогою regular expression</h2>
+        <div class="order">
+            <div class="item goods_card">
+                <div class="card"><img class="card_img" src="../Homework-14/img/20242b0_big.jpeg" alt="lamp"
+                        height="200px">
+                    <title class="card_title">Настільна лампа EGLO 83092</title>
+                    <p class="card_price">4 150 грн</p>
+                    <p class="card_price"></p><button class="card_buy">Купити</button>
+                </div>
+            </div>
+            <div class="item data_buyer hiden">
+                <form class="inform_buyer">
+                    <label>ПІБ
+                        <input class="buyer" type="text" name="buyer">
+                        <span class="buyer_invalid hiden"></span>
+                    </label><br><br>
+                    <label>Email
+                        <input class="email" type="email" name="email">
+                        <span class="email_invalid hiden"></span>
+                    </label><br><br>
+                    <label>Номер телефону
+                        <input class="phone" type="text" name="phone" placeholder="+(xxx)xx-xxx-xxxx">
+                        <span class="phone_invalid hiden"></span>
+                    </label><br><br>
+                    <label>Місто
+                        <select name="city" class="city">
+                            <option></option>
+                            <option value="Київ">Київ</option>
+                            <option value="Дніпро">Дніпро</option>
+                            <option value="Харків">Харків</option>
+                            <option value="Одеса">Одеса</option>
+                            <option value="Львів">Львів</option>
+                            <option value="Трускавецьк">Трускавецьк</option>
+                        </select><br><br>
+                    </label>
+                    <label>Склад Нової Пошти
+                        <input type="number" name="number_post" class="number_post" min="1"></label><br><br>
+                    <label>Оплата
+                        <select name="payment" class="payment">
+                            <option></option>
+                            <option value="Післяплата">Післяплата</option>
+                            <option value="Оплата банківською карткою">Оплата банківською карткою</option>
+                        </select></label><br><br>
+                    <label>Кількість товару
+                        <input type="number" class="quantity" name="quantity" min="1" max="100">
+                    </label><br><br>
+                    <textarea name="comment" placeholder="Комендар до Вашого замовлення"></textarea><br>
+                    <input type="submit" class="submit" value="Підтвердити">
+                </form>
+            </div>
+        </div>
+        <div class="infoOrder hiden"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
