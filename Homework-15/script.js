@@ -10,7 +10,7 @@ const phone_invalid = document.querySelector('.phone_invalid');
 const email_invalid = document.querySelector('.email_invalid');
 
 const patternName = /^[A-Z][a-z]{1,} [A-Z][a-z]{1,} [A-Z][a-z]{1,}$/;
-const patternPhone = /^(\+?\(\d{3}\))?(\d{9}|(\d{2}-\d{3}-\d{4}))$/;
+const patternPhone = /^((\+?\(\d{3}\))|0)(\d{9}|(\d{2}-\d{3}-\d{4})|(\d{9}))$/;
 const patternEmail = /^[A-Za-z0-9._%+-]{5,}@[A-Za-z0-9._%+-]+\.[a-zA-Z]{2,}$/;
 
 
