@@ -5,49 +5,32 @@ const infoOrder = document.querySelector('.infoOrder');
 const buyer = document.querySelector('.buyer');
 const phone = document.querySelector('.phone');
 const email = document.querySelector('.email');
-const buyer_invalid = document.querySelector('.buyer_invalid');
-const phone_invalid = document.querySelector('.phone_invalid');
-const email_invalid = document.querySelector('.email_invalid');
 
 const patternName = /^[A-Z][a-z]{1,} [A-Z][a-z]{1,} [A-Z][a-z]{1,}$/;
 const patternPhone = /^((\+?\(\d{3}\))|0)(\d{9}|(\d{2}-\d{3}-\d{4})|(\d{9}))$/;
-const patternEmail = /^[A-Za-z0-9._%+-]{5,}@[A-Za-z0-9._%+-]+\.[a-zA-Z]{2,}$/;
+const patternEmail = /^[^@.]{5,}@[^@.]+\.[a-zA-Z]{3,}$/;
 
+function validateField(event, pattern, errorClass) {
+    const isValid = pattern.test(event.target.value);
+    const errorElement = document.querySelector(errorClass);
 
-buyer.addEventListener('change', function (event) {
-    const fullName = event.target.value;
-    const isFullNameValide = patternName.test(fullName);
-
-    if (!isFullNameValide) {
-        buyer_invalid.classList.remove('hiden')
-        buyer_invalid.textContent = 'Помилка введення';
+    if (!isValid) {
+        errorElement.classList.remove('hiden')
     } else {
-        buyer_invalid.classList.add('hiden')
+        errorElement.classList.add('hiden')
     }
+}
+
+buyer.addEventListener('change', (event) => {
+    validateField(event, patternName, '.buyer_invalid')
 })
 
-phone.addEventListener('change', function (event) {
-    const phone = event.target.value;
-    const isPhoneValide = phone.match(patternPhone);
-
-    if (!isPhoneValide) {
-        phone_invalid.classList.remove('hiden')
-        phone_invalid.textContent = 'Помилка';
-    } else {
-        phone_invalid.classList.add('hiden')
-    }
+phone.addEventListener('change', (event) => {
+    validateField(event, patternPhone, '.phone_invalid')
 })
 
-email.addEventListener('change', function (event) {
-    const email = event.target.value;
-    const isEmailValide = patternEmail.test(email);
-
-    if (!isEmailValide) {
-        email_invalid.classList.remove('hiden')
-        email_invalid.textContent = 'Помилка';
-    } else {
-        email_invalid.classList.add('hiden')
-    }
+email.addEventListener('change', (event) => {
+    validateField(event, patternEmail, '.email_invalid')
 })
 
 buy.addEventListener('click', function () {
