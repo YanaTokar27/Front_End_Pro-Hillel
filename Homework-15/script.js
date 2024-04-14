@@ -8,7 +8,7 @@ const email = document.querySelector('.email');
 
 const patternName = /^[A-Z][a-z]{1,} [A-Z][a-z]{1,} [A-Z][a-z]{1,}$/;
 const patternPhone = /^((\+?\(\d{3}\))|0)(\d{9}|(\d{2}-\d{3}-\d{4})|(\d{9}))$/;
-const patternEmail = /^[^@.]{5,}@[^@.]+\.[a-zA-Z]{3,}$/;
+const patternEmail = /^[^@]{5,}@[^@.]+\.[a-zA-Z]{3,}$/;
 
 function validateField(event, pattern, errorClass) {
     const isValid = pattern.test(event.target.value);
