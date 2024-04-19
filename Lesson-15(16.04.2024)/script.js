@@ -281,8 +281,8 @@ const task13 = () => {       //практика
     const Tesla = new Car('Tesla');
     const BMW = new Car('BMW');
 
-    Oleg.createCar(Tesla)
-    Oleg.createCar(BMW)
+    Oleg.createCar(Tesla);
+    Oleg.createCar(BMW);
 
     Oleg.updateCar('Tesla', 'My new Tesla');
     console.log(Oleg);
