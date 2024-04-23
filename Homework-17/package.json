@@ -4,11 +4,12 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "http-server": "^14.1.1",
     "jquery": "^3.7.1",
     "mkdirp": "^3.0.1"
   }
