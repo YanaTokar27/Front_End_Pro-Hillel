@@ -1,4 +1,13 @@
-fetch('https://api.openweathermap.org/data/2.5/weather?q=DNIPRO&units=metric&APPID=5d066958a60d315387d9492393935c19')
+const queryParams = {
+    lat: 48.45,
+    lon: 34.9833,
+    APIkey: '5d066958a60d315387d9492393935c19',
+    units: 'metric'
+}
+
+const url = `https://api.openweathermap.org/data/2.5/weather?${new URLSearchParams(queryParams)}`
+
+fetch(url)
     .then(response => response.json())
     .then(data => {
         const city = data.name;
@@ -17,14 +26,14 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=DNIPRO&units=metric&APP
         const labels = ['City', 'Temperature', 'Pressure', 'Description', 'Humidity', 'Speed', 'Degree'];
         const values = [city, temp, pressure, description, humidity, speed, deg];
 
-        for (let i = 0; i < labels.length; i++) {
+        labels.forEach(function (label, i) {
             const pElement = document.createElement('p');
 
-            pElement.textContent = `${labels[i]}: ${values[i]}`;
+            pElement.textContent = `${label}: ${values[i]}`;
             document.querySelector('.weather').appendChild(pElement);
-
-        }
+        })
     })
+
 
 
 

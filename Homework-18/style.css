@@ -7,3 +7,10 @@
     justify-content: center;
     align-items: center;
 }
+
+.weather {
+    border-radius: 7%;
+    border: 2px solid blue;
+    padding: 20px;
+    text-align: center;
+}
