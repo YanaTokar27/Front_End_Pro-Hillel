@@ -1,0 +1,17 @@
+.container {
+    max-width: 80%;
+    min-width: 360px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.information {
+    margin: 0 40px;
+}
+
+.disable {
+    display: none;
+}
