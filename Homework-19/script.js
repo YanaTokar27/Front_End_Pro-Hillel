@@ -65,6 +65,3 @@ getComment.addEventListener('click', function () {
 
 
 
-
-
-
