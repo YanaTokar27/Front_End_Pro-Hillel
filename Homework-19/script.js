@@ -17,8 +17,6 @@ submit.addEventListener('click', function () {
             .then(post => {
                 title.textContent = post.title
                 body.textContent = post.body
-            })
-            .then(function () {
                 getComment.classList.remove('disable')
             })
             .catch(error => {
