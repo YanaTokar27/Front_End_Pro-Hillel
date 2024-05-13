@@ -1,5 +1,4 @@
 class SuperMath {
-
     input() {
         const x = Number(prompt('Ведіть перше число'));
         const y = Number(prompt('Ведіть друге число'));
