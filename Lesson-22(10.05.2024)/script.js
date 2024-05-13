@@ -166,9 +166,11 @@ const task12 = () => {
     const generator = gen();
 
     console.log(generator.next().value);
-    console.log(generator.next(2 + 2));
-    console.log(generator.next(3 * 3));
+    console.log(generator.next(4).value);
+    console.log(generator.next(9).done);
 }
+
+
 
 
 
@@ -182,8 +184,8 @@ const task12 = () => {
 // task6();
 // task7();
 // task8();
-task9();
-task10();
-task11();
+// task9();
+// task10();
+// task11();
 task12();
 
