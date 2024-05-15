@@ -1,7 +1,7 @@
 class SuperMath {
     input() {
-        const x = Number(prompt('Ведіть перше число'));
-        const y = Number(prompt('Ведіть друге число'));
+        const x = parseInt(prompt('Ведіть перше число'));
+        const y = parseInt(prompt('Ведіть друге число'));
         const z = prompt('Ведіть дію');
 
         this.check({ x: x, y: y, z: z })
@@ -19,7 +19,7 @@ class SuperMath {
             return;
         }
         if (isNaN(x) || isNaN(y)) {
-            alert("Введіть коректні числа.");
+            alert('Введіть коректні числа');
             return;
         }
 
@@ -42,7 +42,7 @@ class SuperMath {
                     if (y !== 0) {
                         result = x / y;
                     } else {
-                        console.log("Ділення на нуль неможливе.");
+                        console.log('Ділення на нуль неможливе');
                         return;
                     }
                     break;
@@ -50,7 +50,7 @@ class SuperMath {
                     result = x % y;
                     break;
                 default:
-                    console.log("Невідома операція.");
+                    console.log('Невідома операція');
                     return;
             }
             alert(result);
@@ -59,7 +59,6 @@ class SuperMath {
         }
     }
 }
-
 
 const math1 = new SuperMath();
 math1.check({ x: 3, y: 2, z: '+' })
