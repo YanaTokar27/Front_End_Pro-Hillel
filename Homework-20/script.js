@@ -4,13 +4,16 @@ class SuperMath {
         const y = parseInt(prompt('Ведіть друге число'));
         const z = prompt('Ведіть дію');
 
-        this.check({ x: x, y: y, z: z })
+        this.check({ x, y, z })
     }
 
     check(obj) {
-        const x = obj.x
-        const y = obj.y
-        const z = obj.z
+        // const x = obj.x
+        // const y = obj.y
+        // const z = obj.z
+
+        const { x, y, z } = obj
+
 
         const validZnaks = ['+', '-', '*', '/', '%']
 
