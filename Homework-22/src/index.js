@@ -4,6 +4,7 @@ import './index.css';
 import image1 from './assets/fox.jpeg';
 import image2 from './assets/rabbit.jpeg';
 
+console.log(image1)
 
 getButton();
 

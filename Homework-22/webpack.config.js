@@ -5,7 +5,7 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
     entry: './src/index.js',
-    mode: 'development',
+    // mode: 'development',
     output: {
         filename: 'build.js',
         path: path.resolve(__dirname, 'build'),
@@ -16,10 +16,10 @@ module.exports = {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
-            {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                type: "asset",
-            },
+            // {
+            //     test: /\.(jpe?g|png|gif|svg)$/i,
+            //     type: "asset",
+            // },
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
@@ -38,13 +38,10 @@ module.exports = {
                 minimizer: {
                     implementation: ImageMinimizerPlugin.imageminMinify,
                     options: {
-                        // Lossless optimization with custom option
-                        // Feel free to experiment with options for better result for you
                         plugins: [
                             ["gifsicle", { interlaced: true }],
                             ["jpegtran", { progressive: true }],
                             ["optipng", { optimizationLevel: 5 }],
-                            // Svgo configuration here https://github.com/svg/svgo#configuration
                             [
                                 "svgo",
                                 {
