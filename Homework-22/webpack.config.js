@@ -5,7 +5,7 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
     entry: './src/index.js',
-    // mode: 'development',
+    mode: 'development',
     output: {
         filename: 'build.js',
         path: path.resolve(__dirname, 'build'),
@@ -16,10 +16,10 @@ module.exports = {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
-            // {
-            //     test: /\.(jpe?g|png|gif|svg)$/i,
-            //     type: "asset",
-            // },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                type: "asset",
+            },
             {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
