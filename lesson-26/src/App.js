@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Input from './components/Input/input';
+import TextBlock from './components/Text/Text';
 
 // function formatName(user) {
 //   return user.firstName + ' ' + user.lastName;
@@ -12,6 +13,10 @@ import Input from './components/Input/input';
 // };
 
 function App() {
+  const number = 0;
+  if (number > 1) {
+    return <div>Hello!</div>
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +25,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Input />
+        <Input labelName="Name" className='row' />
+        <Input labelName="Age" />
+        <TextBlock text="Something" />
         <a
           className="App-link"
           href="https://reactjs.org"
