@@ -1,12 +1,9 @@
-import { Component } from "react";
-
 import './header.css';
 
-class Title extends Component {
-    render() {
-        const { text } = this.props;
-        return <div className="App-title">{text}</div>
-    }
-}
+const Title = () => {
+    return (
+        <div className="App-title">"Генерація свого першого React-додатку"</div>
+    );
+};
 
 export default Title;

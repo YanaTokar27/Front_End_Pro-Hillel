@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Title text="Генерація свого першого React-додатку" />
+        <Title />
       </header>
       <body className='main-part'>
         <div className='left-part'>
