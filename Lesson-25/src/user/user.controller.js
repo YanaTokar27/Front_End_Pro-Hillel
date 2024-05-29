@@ -8,6 +8,13 @@ class UserController {
         response.send(users);
     }
 
+    // loginUser = () => {
+    //     const { body } = request;
+    //     response.send({
+    //         jwt: 'hcdjhfdjhf'
+    //     })
+    // }
+
     getUser = async (request, response) => {
         const { userId } = request.params;
         // const id = request.params.userId //віріант 2
