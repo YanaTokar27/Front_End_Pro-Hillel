@@ -1,0 +1,26 @@
+.label {
+    width: 277px;
+    height: 56px;
+    background-color: #D9D9D9;
+    border: none;
+    margin-left: 116px;
+    margin-right: 107px;
+}
+
+::placeholder {
+    color: rgb(68, 178, 111);
+    opacity: 1;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: "Inter", serif;
+    padding-left: 20px;
+}
+
+input:first-child {
+    margin-bottom: 46px;
+    margin-top: 85px;
+}
+
+input:last-child {
+    margin-bottom: 37px;
+}
