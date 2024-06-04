@@ -1,9 +1,9 @@
 import './Button.css';
 
-const LoginButton = () => {
+const Button = ({ label }) => {
     return (
-        <button className='Button'>Login</button>
+        <button className='Button'>{label}</button>
     )
 }
 
-export default LoginButton;
+export default Button;

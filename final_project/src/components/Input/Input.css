@@ -7,7 +7,7 @@
     margin-right: 107px;
 }
 
-::placeholder {
+.label::placeholder {
     color: rgb(68, 178, 111);
     opacity: 1;
     font-weight: 600;
@@ -16,11 +16,11 @@
     padding-left: 20px;
 }
 
-input:first-child {
+.name {
     margin-bottom: 46px;
     margin-top: 85px;
 }
 
-input:last-child {
+.password {
     margin-bottom: 37px;
 }

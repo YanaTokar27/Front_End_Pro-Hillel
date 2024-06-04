@@ -1,14 +1,15 @@
 import './Input.css';
 // import { IoMdEye } from "react-icons/io";
 
-const Input = () => {
+const Input = (props) => {
     return (
         <label>
-            {/* {showIcon && <IoMdEye size="30px" color="green" className='icon' />} */}
-            <input className='label' type='text' placeholder='User Name' /> <br></br>
-            <input className='label' type='password' placeholder='Password' />
+            <input type={props.type} placeholder={props.placeholder} className={props.className} />
         </label>
     );
 };
 
 export default Input;
+
+
+/* /* {showIcon && <IoMdEye size="30px" color="green" className='icon' /> */

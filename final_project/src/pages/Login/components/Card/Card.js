@@ -1,6 +1,6 @@
 import './Card.css';
 import Input from '../../../../components/Input/Input';
-import LoginButton from '../../../../components/Button/Button';
+import Button from '../../../../components/Button/Button';
 import LogoGreen from '../../../../assets/logo_green.svg';
 
 function Card() {
@@ -9,8 +9,9 @@ function Card() {
             <div className='LogoGreen' >
                 <img src={LogoGreen} alt="logoGreen" />
             </div >
-            <Input />
-            <LoginButton />
+            <Input type="text" placeholder="User Name" className="label name" />
+            <Input type="password" placeholder="Password" className="label password" />
+            <Button label="Login" />
         </div >
     );
 }
