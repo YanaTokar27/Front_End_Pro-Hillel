@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import Input from './components/Input/input';
 import TextBlock from './components/Text/Text';
+// import Select from './components/Select/Select';
+import Clock from './components/Clock/Clock';
+import Users from './components/Users/Users';
 
 // function formatName(user) {
 //   return user.firstName + ' ' + user.lastName;
@@ -22,20 +25,27 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         {/* {formatName(user)} */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+
         <Input labelName="Name" className='row' />
         <Input labelName="Age" />
         <TextBlock text="Something" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* <Select
+          options={[{ value: 'volvo', name: 'Volvo' },
+          { value: 'saab', name: 'Saab' },
+          { value: 'mercedes', name: 'Mercedes' },
+          { value: 'audi', name: 'Audi' }]} /> */}
+
+        {/* варіант-2
+        <Select>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </Select> */}
+
+        <Clock />
+        <Users />
+
       </header>
     </div>
   );
