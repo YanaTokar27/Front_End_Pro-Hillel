@@ -6,7 +6,7 @@ import LogoGreen from '../../../../assets/logo_green.svg';
 function Card() {
     return (
         <div className="Card">
-            <div className='LogoGreen' >
+            <div >
                 <img src={LogoGreen} alt="logoGreen" />
             </div >
             <Input type="text" placeholder="User Name" className="label name" />

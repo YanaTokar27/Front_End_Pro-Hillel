@@ -1,0 +1,72 @@
+.Table {
+    border-spacing: 0;
+    padding-left: 284px;
+}
+
+th,
+td {
+    width: 152px;
+    height: 39px;
+    text-align: center;
+}
+
+tr {
+    display: flex;
+}
+
+thead {
+    background: rgb(14, 200, 111);
+    color: rgb(114, 105, 105);
+    font-family: Inter;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0%;
+}
+
+tbody {
+    background: rgb(217, 217, 217);
+    color: rgb(255, 255, 255);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.arrow {
+    padding-left: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+table tbody tr:nth-child(2n) {
+    background-color: rgb(60, 215, 140);
+    color: rgb(165, 143, 143);
+}
+
+td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pencil {
+    width: 20px;
+    height: 22px;
+    color: rgb(0, 0, 0);
+}
+
+.box {
+    width: 19px;
+    height: 19px;
+    color: rgb(0, 0, 0);
+    padding-left: 10px;
+}
