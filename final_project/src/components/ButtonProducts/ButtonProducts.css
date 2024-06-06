@@ -1,0 +1,48 @@
+.button-product {
+    width: 179px;
+    height: 52px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-weight: 700;
+    color: rgb(5, 188, 82);
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+}
+
+.img {
+    width: 25px;
+    height: 25px;
+    color: rgb(0, 0, 0);
+}
+
+.user {
+    padding: 14px 14px 13px 19px;
+}
+
+.plus {
+    padding: 15px 15px 12px 18px;
+}
+
+.Buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 31px;
+}
+
+.Buttons .button-product:first-child {
+    margin-left: 70px;
+}
+
+.Buttons .button-product:nth-child(2) {
+    margin-right: 77px;
+}
+
+.button-product {
+    margin-left: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 0;
+}
+
