@@ -1,28 +1,21 @@
 import { Component } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 class Users extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { users: [] };
-    }
-
-    componentDidMount() {
-        this.getUsers();
-    }
-
-    async getUsers() {
-        const response = await fetch('https://6628f7e654afcabd0737a2a7.mockapi.io/posts');
-        const data = await response.json();
-
-        this.setState = ({ users: data });
-    }
-
     render() {
+        const { users, isError, isLoadind } = this.props;
         return (
             <div>
                 <h1>Users</h1>
-                {this.state.users.map(user => <p key={user.id}>{user.name}</p>)}
-            </div>
+                {isLoadind ? <FaSpinner /> : (users.map(user =>
+                    <div key={user.id}>
+                        <img src={user.avatar} alt="Avatar" />
+                        <p>{user.name}</p>
+                        <p>{user.last_name}</p>
+                    </div >))
+                }
+                {isError && (<p>Ooops something went wrong</p>)}
+            </div >
         );
     }
 }
