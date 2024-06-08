@@ -1,0 +1,62 @@
+.Card {
+    background: rgb(255, 255, 255);
+    width: 273px;
+    height: 376px;
+    padding: 37px 13px 24px 19px;
+    margin: 0 82px 61px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+.Title {
+    margin-bottom: 22px;
+    margin-top: 26px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.Price {
+    color: rgb(252, 91, 0);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 0px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.Quantity {
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.Wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.Cart {
+    color: rgb(5, 188, 82);
+    margin-right: 12px;
+}
+
+.ReadyToShip {
+    color: rgb(5, 188, 82);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+}
