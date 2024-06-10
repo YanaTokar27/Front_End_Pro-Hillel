@@ -2,7 +2,6 @@ import './Preview.css';
 import LogoWhite from '../../assets/logo_white.svg'
 import CardProduct from './components/CardProduct/CardProduct';
 
-
 const products = [
     { id: 0, category: 'PC', name: 'Lenovo Y50-70', quantity: 5, price: 25000 },
     { id: 1, category: 'Clothes', name: 'Nike M Nk Df Acd21', quantity: 22, price: 4000 },
@@ -11,7 +10,7 @@ const products = [
 
 ]
 
-function Preview() {
+const Preview = () => {
     return (
         <div className='Preview'>
             <div className='LogoWhite'>
@@ -21,13 +20,7 @@ function Preview() {
                 {products.map(product =>
                     <CardProduct product={product} />
                 )}</div>
-
-
-
         </div>
-
-
-
     )
 }
 

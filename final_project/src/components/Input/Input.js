@@ -12,15 +12,12 @@ const Input = (props) => {
         return props.type;
     }
 
-    const handleClick = () => {
-        setIsPasswordVisible(!isPasswordVisible);
-    }
     return (
         <div className='input-wrapper'>
             <label>
                 <input type={getInputType()} placeholder={props.placeholder} className={props.className} />
                 {props.type === 'password' && (
-                    <div onClick={handleClick}>
+                    <div onClick={setIsPasswordVisible(!isPasswordVisible)}>
                         {isPasswordVisible ?
                             <IoMdEyeOff className='eye' viewBox="100 100 303 303" /> :
                             <IoMdEye className='eye' viewBox="100 100 303 303" />}
