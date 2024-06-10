@@ -1,0 +1,16 @@
+.Preview {
+    background-color: #44B26F;
+}
+
+.LogoWhite {
+    padding-top: 20px;
+    padding-left: 29px;
+    padding-bottom: 62px;
+}
+
+.Cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
