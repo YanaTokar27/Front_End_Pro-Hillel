@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Input from './components/Input/input';
-import TextBlock from './components/Text/Text';
+// import Input from './components/Input/input';
+// import TextBlock from './components/Text/Text';
 // import Select from './components/Select/Select';
 // import Clock from './components/Clock/Clock';
 // import Users from './components/Users/Users';
