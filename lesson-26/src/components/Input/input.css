@@ -7,3 +7,7 @@
 .row {
     flex-direction: row;
 }
+
+.input-error {
+    border: 2px solid red;
+}

@@ -1,75 +1,57 @@
-import { Component } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
-// import Input from './components/Input/input';
-// import TextBlock from './components/Text/Text';
+import Input from './components/Input/input';
+import TextBlock from './components/Text/Text';
 // import Select from './components/Select/Select';
 // import Clock from './components/Clock/Clock';
-import Users from './components/Users/Users';
-import Profile from './components/Profile/Profile';
-import Toggle from './components/Toggle/Toggle';
-import Form from './components/Form/Form';
+// import Users from './components/Users/Users';
+// import Profile from './components/Profile/Profile';
+// import Toggle from './components/Toggle/Toggle';
+// import FunctionalToggle from './components/Toggle/FunctionalToggle';
+import Form from './components/Form/HookForm';
+// import Iterator from './components/Iterator/Iterator';
 
-// function formatName(user) {
-//   return user.firstName + ' ' + user.lastName;
-// }
+const App = () => {
+    const [users, setUsers] = useState([]);
+    const [isError, setIsError] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
-// const user = {
-//   firstName: 'Harper',
-//   lastName: 'Perez'
-// };
+    useEffect(() => {
+        getUsers();
+    }, [])
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: [],
-      isError: false,
-      isLoadind: true,
-    };
-  }
 
-  componentDidMount() {
-    this.getUsers();
-  }
+    const getUsers = async () => {
+        try {
+            const response = await fetch(
+                'https://6628f7e654afcabd0737a2a7.mockapi.io/users'
+            );
 
-  async getUsers() {
-    try {
-      const response = await fetch('https://6628f7e654afcabd0737a2a7.mockapi.io/users');
+            if (!response.ok) {
+                throw new Error('Something went wrong')
+            }
+            const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error('Something went wrong')
-      }
-      const data = await response.json();
-
-      this.setState({ users: data, isLoadind: false });
-    } catch (error) {
-      this.setState({
-        isError: true,
-        isLoadind: false
-      });
+            setUsers(data);
+            setIsLoading(false);
+        } catch (error) {
+            setIsLoading(false);
+            setIsError(true);
+        };
     }
-  }
 
-  render() {
-    const { users, isError, isLoadind } = this.state;
-
-    //   const number = 0;
-    //   if(number > 1) {
-    //   return <div>Hello!</div>
-    // }
     return (
-      <div className="App">
-        <header className="App-header">
-          {/* {formatName(user)} */}
+        <div className="App">
+            <header className="App-header">
 
-          {/* <Input labelName="Name" className='row' />
-          <Input labelName="Age" />
-          <TextBlock text="Something" /> */}
-          {/* <Select
+                {/* <Input labelName="Name" className='row' />
+                <Input labelName="Age" />
+                <TextBlock text="Something" /> */}
+                {/* <Select
           options={[{ value: 'volvo', name: 'Volvo' },
           { value: 'saab', name: 'Saab' },
           { value: 'mercedes', name: 'Mercedes' },
-          { value: 'audi', name: 'Audi' }]} /> */}
+          { value: 'audi', name: 'Audi' }]} />
 
           {/* варіант-2
         <Select>
@@ -79,16 +61,19 @@ class App extends Component {
           <option value="audi">Audi</option>
         </Select> */}
 
-          {/* <Clock /> */}
-          <Form />
-          <Toggle />
-          <Profile user={users[0]} />
-          <Profile user={users[1]} />
-          <Users users={users} isError={isError} isLoadind={isLoadind} />
-        </header>
-      </div>
+                {/* <Clock /> */}
+                {/* <Form /> */}
+                {/* <Toggle /> */}
+                <Form />
+                {/* <Profile user={users[0]} />
+                <Profile user={users[1]} />
+                <Users users={users} isError={isError} isLoadind={isLoading} />
+                <Iterator />
+                <FunctionalToggle /> */}
+            </header>
+        </div>
     );
-  }
 }
+
 
 export default App;
