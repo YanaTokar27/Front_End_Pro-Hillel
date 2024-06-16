@@ -5,3 +5,7 @@
     padding: 80px 106px 0 116px;
 }
 
+.unauthorized {
+    color: red;
+    font-weight: bold;
+}

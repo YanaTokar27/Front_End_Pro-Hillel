@@ -10,6 +10,12 @@ const products = [
 
 ]
 
+// const products = async () => {
+//     const response = await fetch(
+//         'https://6628f7e654afcabd0737a2a7.mockapi.io/products');
+//     const data = await response.json();
+// }
+
 const Preview = () => {
     return (
         <div className='Preview'>
