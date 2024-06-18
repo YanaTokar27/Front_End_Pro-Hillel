@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Input from '../Input/input';
 import './HookForm.css';
 
@@ -7,6 +7,9 @@ const Form = () => {
     const [surName, setSurName] = useState('');
     const [isNameEmpty, setIsNameEmpty] = useState(false);
     const [isSurNameEmpty, setIsSurNameEmpty] = useState(false);
+
+    const inputEl = useRef();
+
 
     const validateForm = () => {
         if (!name.trim()) setIsNameEmpty(true)
@@ -17,7 +20,7 @@ const Form = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        console.log(inputEl.current.value);
         const isValid = validateForm();
 
         if (!isValid) {
@@ -73,6 +76,7 @@ const Form = () => {
                 classNamePrefix="select"
                 onChange={this.handleChangeSelect}
             /> */}
+            Test: <input ref={inputEl} type='text'></input>
             <input type="submit" value="Надіслати" />
         </form >
     )

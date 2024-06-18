@@ -1,15 +1,18 @@
-import { useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import './App.css';
 // import Input from './components/Input/input';
 // import TextBlock from './components/Text/Text';
 // import Select from './components/Select/Select';
 // import Clock from './components/Clock/Clock';
-// import Users from './components/Users/Users';
+import Users from './components/Users/Users';
 // import Profile from './components/Profile/Profile';
 // import Toggle from './components/Toggle/Toggle';
 // import FunctionalToggle from './components/Toggle/FunctionalToggle';
 import Form from './components/Form/HookForm';
 // import Iterator from './components/Iterator/Iterator';
+// import Reducer from './components/useReducer/useReduser';
+
+export const UserContext = createContext();
 
 const App = () => {
     const [users, setUsers] = useState([]);
@@ -19,7 +22,6 @@ const App = () => {
     useEffect(() => {
         getUsers();
     }, [])
-
 
     const getUsers = async () => {
         try {
@@ -41,13 +43,16 @@ const App = () => {
     }
 
     return (
-        <div className="App">
-            <header className="App-header">
+        <UserContext.Provider value={{
+            user: 'Test',
+        }}>
+            <div className="App">
+                <header className="App-header">
 
-                {/* <Input labelName="Name" className='row' />
+                    {/* <Input labelName="Name" className='row' />
                 <Input labelName="Age" />
                 <TextBlock text="Something" /> */}
-                {/* <Select
+                    {/* <Select
           options={[{ value: 'volvo', name: 'Volvo' },
           { value: 'saab', name: 'Saab' },
           { value: 'mercedes', name: 'Mercedes' },
@@ -61,17 +66,19 @@ const App = () => {
           <option value="audi">Audi</option>
         </Select> */}
 
-                {/* <Clock /> */}
-                {/* <Form /> */}
-                {/* <Toggle /> */}
-                <Form />
-                {/* <Profile user={users[0]} />
-                <Profile user={users[1]} />
-                <Users users={users} isError={isError} isLoadind={isLoading} />
-                <Iterator />
-                <FunctionalToggle /> */}
-            </header>
-        </div>
+                    {/* <Clock /> */}
+                    {/* <Form /> */}
+                    {/* <Toggle /> */}
+                    <Form />
+                    {/* <Profile user={users[0]} /> */}
+                    {/* <Profile user={users[1]} /> */}
+                    <Users users={users} isError={isError} isLoadind={isLoading} />
+                    {/* <Iterator /> */}
+                    {/* <FunctionalToggle /> */}
+                    {/* <Reducer /> */}
+                </header>
+            </div>
+        </UserContext.Provider>
     );
 }
 
