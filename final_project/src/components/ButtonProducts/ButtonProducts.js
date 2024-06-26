@@ -1,8 +1,10 @@
-import './ButtonProducts.css';
+import "./ButtonProducts.css";
 
-const ButtonProducts = ({ icon, label }) => (
-    <button className="button-product"> {icon} {label}
-    </button>
+const ButtonProducts = (props) => (
+  <button className="button-product" onClick={props.onClick}>
+    {" "}
+    {props.icon} {props.label}
+  </button>
 );
 
 export default ButtonProducts;

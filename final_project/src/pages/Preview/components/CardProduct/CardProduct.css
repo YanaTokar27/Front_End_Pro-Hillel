@@ -1,4 +1,4 @@
-.Card {
+.CardProduct {
     background: rgb(255, 255, 255);
     width: 273px;
     height: 376px;
@@ -6,7 +6,6 @@
     margin: 0 82px 61px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 
