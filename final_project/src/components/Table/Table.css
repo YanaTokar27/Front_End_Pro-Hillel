@@ -1,6 +1,6 @@
 .Table {
     border-spacing: 0;
-    padding-left: 284px;
+    margin-left: 284px;
 }
 
 th,
@@ -62,6 +62,7 @@ td {
     width: 20px;
     height: 22px;
     color: rgb(0, 0, 0);
+    cursor: pointer;
 }
 
 .box {
@@ -69,4 +70,6 @@ td {
     height: 19px;
     color: rgb(0, 0, 0);
     padding-left: 10px;
+    cursor: pointer;
+    box-sizing: content-box;
 }

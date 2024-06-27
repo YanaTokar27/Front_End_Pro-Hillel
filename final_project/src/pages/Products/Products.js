@@ -6,9 +6,16 @@ import ButtonProducts from "../../components/ButtonProducts/ButtonProducts";
 import { FaRegUser } from "react-icons/fa6";
 import { GoPlus } from "react-icons/go";
 import { API_URL } from "../../constans";
+import { useNavigate } from "react-router-dom";
 
 function Products() {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+
+  const navigateToPreview = () => {
+    navigate("/preview");
+  };
+
   useEffect(() => {
     const getProducts = async () => {
       const response = await fetch(`${API_URL}/products`);
@@ -26,6 +33,7 @@ function Products() {
       </div>
       <div className="Buttons">
         <ButtonProducts
+          onClick={navigateToPreview}
           icon={<FaRegUser className="img user" />}
           label="Preview"
         />
@@ -34,7 +42,7 @@ function Products() {
           label="Add product"
         />
       </div>
-      <h2 className="Title">Products</h2>
+      <h2 className="ProductsTitle">Products</h2>
       <Table products={products} />
     </div>
   );

@@ -16,11 +16,11 @@
 }
 
 .user {
-    padding: 14px 14px 13px 19px;
+    margin: 14px 14px 13px 19px;
 }
 
 .plus {
-    padding: 15px 15px 12px 18px;
+    margin: 15px 15px 12px 18px;
 }
 
 .Buttons {
@@ -45,4 +45,3 @@
     align-items: center;
     padding: 0;
 }
-
