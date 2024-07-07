@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import "./EditProduct.css";
 import { useState, useEffect } from "react";
 
-function EditProduct(props) {
+function EditProduct({ product, show, handleSave, handleClose }) {
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(0);
@@ -11,23 +11,21 @@ function EditProduct(props) {
   const [description, setDescription] = useState("");
 
   useEffect(() => {
-    const product = props.product;
     setCategory(product.category);
     setName(product.name);
     setQuantity(product.quantity);
     setPrice(product.price);
     setDescription(product.description);
-  }, [props.show]);
+  }, [show]);
 
   const onSubmit = () => {
-    const id = props.product.id;
-    const product = { id, category, name, quantity, price, description };
-    console.log("onSubmit: " + JSON.stringify(product));
-    props.handleSave(product);
+    const id = product.id;
+    const newProduct = { id, category, name, quantity, price, description };
+    handleSave(newProduct);
   };
 
   return (
-    <Modal show={props.show} onHide={props.handleClose} centered>
+    <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
         <Modal.Title>Edit product</Modal.Title>
       </Modal.Header>
@@ -75,7 +73,7 @@ function EditProduct(props) {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={props.handleClose}>
+        <Button variant="secondary" onClick={handleClose}>
           Cancel
         </Button>
         <Button variant="primary" onClick={onSubmit}>

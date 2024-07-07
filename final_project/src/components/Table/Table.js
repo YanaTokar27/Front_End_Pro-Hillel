@@ -6,7 +6,7 @@ import { FaBoxArchive } from "react-icons/fa6";
 import EditProduct from "../EditProduct/EditProduct";
 import ConfirmDelete from "../ConfirmDelete/ConfirmDelete";
 
-const Table = (props) => {
+const Table = ({ products, onProductChanged, onProductDelete }) => {
   const [showEdit, setShowEdit] = useState(false);
   const [editedProduct, setEditedProduct] = useState({});
 
@@ -22,7 +22,7 @@ const Table = (props) => {
   const closeEditDialog = () => setShowEdit(false);
   const saveEditDialog = (product) => {
     setShowEdit(false);
-    props.onProductChanged(product);
+    onProductChanged(product);
   };
 
   const openConfirmDelete = (productId) => {
@@ -32,7 +32,7 @@ const Table = (props) => {
 
   const confirmDelete = () => {
     setShowDelete(false);
-    props.onProductDelete(productIdToDelete);
+    onProductDelete(productIdToDelete);
   };
 
   return (
@@ -71,7 +71,7 @@ const Table = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.products.map((product) => (
+          {products.map((product) => (
             <tr key={product.id}>
               <td>{product.id}</td>
               <td>{product.category}</td>

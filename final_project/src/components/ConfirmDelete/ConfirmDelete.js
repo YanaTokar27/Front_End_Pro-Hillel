@@ -1,20 +1,20 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function ConfirmDelete(props) {
+const ConfirmDelete = ({ show, handleClose, handleDelete }) => {
   return (
-    <Modal show={props.show} onHide={props.handleClose} centered>
+    <Modal show={show} onHide={handleClose} centered>
       <Modal.Body>Are you sure you want to delete this product?</Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={props.handleClose}>
+        <Button variant="secondary" onClick={handleClose}>
           Cancel
         </Button>
-        <Button variant="primary" onClick={props.handleDelete}>
+        <Button variant="primary" onClick={handleDelete}>
           Delete
         </Button>
       </Modal.Footer>
     </Modal>
   );
-}
+};
 
 export default ConfirmDelete;

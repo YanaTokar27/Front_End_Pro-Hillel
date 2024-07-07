@@ -11,13 +11,14 @@ const Product = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
 
+  const getProduct = async () => {
+    const response = await fetch(`${API_URL}/products/${productId}`);
+    const data = await response.json();
+    setProduct(data);
+    console.log("Products loaded");
+  };
+
   useEffect(() => {
-    const getProduct = async () => {
-      const response = await fetch(`${API_URL}/products/${productId}`);
-      const data = await response.json();
-      setProduct(data);
-      console.log("Products loaded");
-    };
     getProduct();
   }, []);
 
