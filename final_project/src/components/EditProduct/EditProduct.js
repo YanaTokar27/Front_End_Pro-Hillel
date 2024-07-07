@@ -3,23 +3,31 @@ import Modal from "react-bootstrap/Modal";
 import "./EditProduct.css";
 import { useState, useEffect } from "react";
 
-function EditProduct({ product, show, handleSave, handleClose }) {
+function AddEditProduct({ product, show, handleSave, handleClose }) {
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState(0);
-  const [price, setPrice] = useState(0);
+  const [quantity, setQuantity] = useState(null);
+  const [price, setPrice] = useState(null);
   const [description, setDescription] = useState("");
 
   useEffect(() => {
-    setCategory(product.category);
-    setName(product.name);
-    setQuantity(product.quantity);
-    setPrice(product.price);
-    setDescription(product.description);
+    if (product) {
+      setCategory(product.category);
+      setName(product.name);
+      setQuantity(product.quantity);
+      setPrice(product.price);
+      setDescription(product.description);
+    } else {
+      setCategory("");
+      setName("");
+      setQuantity(null);
+      setPrice(null);
+      setDescription("");
+    }
   }, [show]);
 
   const onSubmit = () => {
-    const id = product.id;
+    const id = product ? product.id : undefined;
     const newProduct = { id, category, name, quantity, price, description };
     handleSave(newProduct);
   };
@@ -27,7 +35,7 @@ function EditProduct({ product, show, handleSave, handleClose }) {
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Edit product</Modal.Title>
+        <Modal.Title>{product ? "Edit product" : "Add product"}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div>
@@ -49,6 +57,7 @@ function EditProduct({ product, show, handleSave, handleClose }) {
         <div>
           Quantity <br />
           <input
+            type="number"
             className="Modal-input"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
@@ -57,6 +66,7 @@ function EditProduct({ product, show, handleSave, handleClose }) {
         <div>
           Price <br />
           <input
+            type="number"
             className="Modal-input"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
@@ -84,4 +94,4 @@ function EditProduct({ product, show, handleSave, handleClose }) {
   );
 }
 
-export default EditProduct;
+export default AddEditProduct;
