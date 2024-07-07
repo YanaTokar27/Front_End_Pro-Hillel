@@ -16,13 +16,38 @@ function Products() {
     navigate("/preview");
   };
 
+  const getProducts = async () => {
+    const response = await fetch(`${API_URL}/products`);
+    const data = await response.json();
+    setProducts(data);
+    console.log("Products loaded");
+  };
+
+  const updateProduct = async (product) => {
+    const response = await fetch(`${API_URL}/products/${product.id}`, {
+      method: "PUT",
+      body: JSON.stringify(product),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    await response.json();
+    getProducts();
+  };
+
+  const onProductChanged = (product) => {
+    updateProduct(product);
+  };
+
+  const onProductDelete = async (productId) => {
+    const response = await fetch(`${API_URL}/products/${productId}`, {
+      method: "DELETE",
+    });
+    await response.json();
+    getProducts();
+  };
+
   useEffect(() => {
-    const getProducts = async () => {
-      const response = await fetch(`${API_URL}/products`);
-      const data = await response.json();
-      setProducts(data);
-      console.log("Products loaded");
-    };
     getProducts();
   }, []);
 
@@ -43,7 +68,11 @@ function Products() {
         />
       </div>
       <h2 className="ProductsTitle">Products</h2>
-      <Table products={products} />
+      <Table
+        products={products}
+        onProductChanged={onProductChanged}
+        onProductDelete={onProductDelete}
+      />
     </div>
   );
 }
