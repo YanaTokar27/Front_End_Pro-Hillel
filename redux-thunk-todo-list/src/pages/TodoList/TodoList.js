@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import List from "../../components/List/List";
-import Form from "../../components/Form/Form";
+import TodoFormik from "../../components/Form/Formik";
 import Input from '../../components/Input/Input';
 import { connect } from "react-redux";
-import { addTodo, changeName, fetchTodos } from "../../modules/TodoList/actions";
+import { addTodo, changeName, editTodo, fetchTodos } from "../../modules/TodoList/actions";
 
-const TodoList = ({ addTodo, changeName, fetchTodos, isLoaded, name }) => {
+const TodoList = ({ addTodo, changeName, editId, editTodo, fetchTodos, isLoaded, isLoading, name }) => {
   useEffect(() => {
     if (!isLoaded) {
       fetchTodos();
@@ -15,20 +15,17 @@ const TodoList = ({ addTodo, changeName, fetchTodos, isLoaded, name }) => {
   return (
     <div>
       Todo List
-      <List />
-      <Form handleSubmit={addTodo}>
-        <label>
-          Name:
-          <Input value={name} handleChange={changeName} />
-        </label>
-      </Form>
+      {isLoading ? <p>Loading</p> : <List />}
+      <TodoFormik handleSubmit={editId ? editTodo : addTodo} />
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
   isLoaded: state.todos.isLoaded,
+  isLoading: state.todos.isLoading,
   name: state.todos.name,
+  editId: state.todos.editId,
 });
 
-export default connect(mapStateToProps, { addTodo, changeName, fetchTodos })(TodoList);
+export default connect(mapStateToProps, { addTodo, changeName, editTodo, fetchTodos })(TodoList);

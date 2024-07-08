@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.item-done{
+.itemDone{
     cursor: pointer;
     text-decoration: line-through;
 }

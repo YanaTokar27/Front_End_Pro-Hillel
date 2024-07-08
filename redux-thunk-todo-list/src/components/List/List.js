@@ -1,7 +1,6 @@
 import Item from '../Item/Item';
 import { connect } from "react-redux";
 
-
 const List = ({ items }) => (
     <ul>
         {items.map(item => 

@@ -1,9 +1,22 @@
-import { ADD_TODO, CHANGE_NAME, DELETE_TODO, FETCH_TODOS } from "./actionTypes";
+import { ADD_TODO, CHANGE_NAME, DELETE_TODO, EDIT_TODO, FETCH_TODOS, SET_EDIT, SET_IS_LOADING } from "./actionTypes";
 import { API_URL } from "../../constants";
 
-export const addTodo = () => async (dispatch, getState) => {
-  const state = getState();
+export const changeName = (name) => ({
+  type: CHANGE_NAME,
+  payload: {
+    name,
+  }
+})
 
+export const editId = (editId, editName) => ({
+  type: SET_EDIT,
+  payload: {
+    editId,
+    editName,
+  }
+});
+
+export const addTodo = (name) => async (dispatch, getState) => {
   try {
     await fetch(`${API_URL}/todos`, {
       method: "POST",
@@ -12,7 +25,7 @@ export const addTodo = () => async (dispatch, getState) => {
       },
       body: JSON.stringify({
         isDone: false,
-        name: state.todos.name,
+        name: name,
       }),
     });
 
@@ -24,7 +37,35 @@ export const addTodo = () => async (dispatch, getState) => {
   }
 }
 
+export const editTodo = () => async (dispatch, getState) => {
+  const { todos } = getState();
+
+  try {
+    await fetch(`${API_URL}/todos/${todos.editId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        isDone: false,
+        name: todos.name,
+      }),
+    });
+
+    dispatch({
+      type: EDIT_TODO,
+    });
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+
 export const fetchTodos = () => async (dispatch) => {
+  dispatch({
+    type: SET_IS_LOADING,
+  });
+  
   try {
     const response = await fetch(`${API_URL}/todos`);
     const data = await response.json();
@@ -53,10 +94,3 @@ export const deleteTodo = (id) => async (dispatch) => {
     console.error("Error:", error);
   }
 };
-
-export const changeName = (name) => ({
-  type: CHANGE_NAME,
-  payload: {
-    name,
-  }
-})
