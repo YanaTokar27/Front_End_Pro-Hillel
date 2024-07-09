@@ -3,23 +3,32 @@ import Modal from "react-bootstrap/Modal";
 import "./EditProduct.css";
 import { useState, useEffect } from "react";
 
-function EditProduct({ product, show, handleSave, handleClose }) {
+function AddEditProduct({ product, show, handleSave, handleClose }) {
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState(0);
-  const [price, setPrice] = useState(0);
+  const [quantity, setQuantity] = useState(null);
+  const [price, setPrice] = useState(null);
   const [description, setDescription] = useState("");
 
   useEffect(() => {
-    setCategory(product.category);
-    setName(product.name);
-    setQuantity(product.quantity);
-    setPrice(product.price);
-    setDescription(product.description);
+    if (product) {
+      const { category, name, quantity, price, description } = product;
+      setCategory(category);
+      setName(name);
+      setQuantity(quantity);
+      setPrice(price);
+      setDescription(description);
+    } else {
+      setCategory("");
+      setName("");
+      setQuantity(null);
+      setPrice(null);
+      setDescription("");
+    }
   }, [show]);
 
   const onSubmit = () => {
-    const id = product.id;
+    const id = product ? product.id : undefined;
     const newProduct = { id, category, name, quantity, price, description };
     handleSave(newProduct);
   };
@@ -27,50 +36,54 @@ function EditProduct({ product, show, handleSave, handleClose }) {
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Edit product</Modal.Title>
+        <Modal.Title>{product ? "Edit product" : "Add product"}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div>
-          Category <br />
-          <input
-            className="Modal-input"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          Name <br />
-          <input
-            className="Modal-input"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          Quantity <br />
-          <input
-            className="Modal-input"
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          Price <br />
-          <input
-            className="Modal-input"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          Description
-          <br />
-          <textarea
-            className="Modal-input"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          ></textarea>
-        </div>
+        <form>
+          <div>
+            Category <br />
+            <input
+              className="Modal-input"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            Name <br />
+            <input
+              className="Modal-input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            Quantity <br />
+            <input
+              type="number"
+              className="Modal-input"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            Price <br />
+            <input
+              type="number"
+              className="Modal-input"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            ></input>
+          </div>
+          <div>
+            Description
+            <br />
+            <textarea
+              className="Modal-input"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
+          </div>
+        </form>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
@@ -84,4 +97,4 @@ function EditProduct({ product, show, handleSave, handleClose }) {
   );
 }
 
-export default EditProduct;
+export default AddEditProduct;

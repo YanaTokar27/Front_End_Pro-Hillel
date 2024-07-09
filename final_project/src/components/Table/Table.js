@@ -3,7 +3,7 @@ import "./Table.css";
 import { TbArrowsSort } from "react-icons/tb";
 import { BsFillPencilFill } from "react-icons/bs";
 import { FaBoxArchive } from "react-icons/fa6";
-import EditProduct from "../EditProduct/EditProduct";
+import AddEditProduct from "../EditProduct/EditProduct";
 import ConfirmDelete from "../ConfirmDelete/ConfirmDelete";
 
 const Table = ({ products, onProductChanged, onProductDelete }) => {
@@ -37,7 +37,7 @@ const Table = ({ products, onProductChanged, onProductDelete }) => {
 
   return (
     <div>
-      <EditProduct
+      <AddEditProduct
         product={editedProduct}
         show={showEdit}
         handleClose={closeEditDialog}
