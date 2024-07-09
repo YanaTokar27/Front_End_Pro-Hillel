@@ -27,27 +27,25 @@ function Products() {
   };
 
   const updateProduct = async (product) => {
-    const response = await fetch(`${API_URL}/products/${product.id}`, {
+    await fetch(`${API_URL}/products/${product.id}`, {
       method: "PUT",
       body: JSON.stringify(product),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    await response.json();
     getProducts();
   };
 
   const saveAddDialog = async (product) => {
     setShowAdd(false);
-    const response = await fetch(`${API_URL}/products`, {
+    await fetch(`${API_URL}/products`, {
       method: "POST",
       body: JSON.stringify(product),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    await response.json();
     getProducts();
   };
 
@@ -56,10 +54,9 @@ function Products() {
   };
 
   const onProductDelete = async (productId) => {
-    const response = await fetch(`${API_URL}/products/${productId}`, {
+    await fetch(`${API_URL}/products/${productId}`, {
       method: "DELETE",
     });
-    await response.json();
     getProducts();
   };
 
