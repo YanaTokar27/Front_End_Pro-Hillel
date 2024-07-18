@@ -10,6 +10,16 @@ function AddEditProduct({ product, show, handleSave, handleClose }) {
   const [price, setPrice] = useState(null);
   const [description, setDescription] = useState("");
 
+  const noErrors = {
+    categoryInput: "",
+    nameInput: "",
+    quantityInput: "",
+    priceInput: "",
+    descriptionText: "",
+  };
+  const [errors, setErrors] = useState(noErrors);
+  const [errorsText, setErrorsText] = useState(noErrors);
+
   useEffect(() => {
     if (product) {
       const { category, name, quantity, price, description } = product;
@@ -25,38 +35,60 @@ function AddEditProduct({ product, show, handleSave, handleClose }) {
       setPrice(null);
       setDescription("");
     }
+
+    setErrors(noErrors);
+    setErrorsText(noErrors);
   }, [show]);
 
-  const validateInput = (inputId, errorElementId) => {
-    const input = document.getElementById(inputId);
-    const errorElement = document.getElementById(errorElementId);
+  const validateInput = (value, id, inputType) => {
+    if (!value) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [id]: "validation-error",
+      }));
 
-    if (!input.value.trim()) {
-      input.classList.add("validation-error");
-      errorElement.textContent = "This field is required";
-
-      return false;
-    }
-
-    if (input.type === "number" && input.value < 1) {
-      input.classList.add("validation-error");
-      errorElement.textContent = "Value should be positive number";
+      setErrorsText((prevErrorsText) => ({
+        ...prevErrorsText,
+        [id]: "This field is required",
+      }));
 
       return false;
     }
 
-    input.classList.remove("validation-error");
-    errorElement.textContent = "";
+    if (inputType === "number" && value < 1) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [id]: "validation-error",
+      }));
+
+      setErrorsText((prevErrorsText) => ({
+        ...prevErrorsText,
+        [id]: "Value should be positive number",
+      }));
+
+      return false;
+    }
+
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [id]: "",
+    }));
+
+    setErrorsText((prevErrorsText) => ({
+      ...prevErrorsText,
+      [id]: "",
+    }));
     return true;
   };
 
   const validateAll = () => {
     let allValid = true;
-    allValid &= validateInput("categoryInput", "categoryInputError");
-    allValid &= validateInput("nameInput", "nameInputError");
-    allValid &= validateInput("quantityInput", "quantityInputError");
-    allValid &= validateInput("priceInput", "priceInputError");
-    allValid &= validateInput("descriptionText", "descriptionTextError");
+
+    allValid &= validateInput(category, "categoryInput", "text");
+    allValid &= validateInput(name, "nameInput", "text");
+    allValid &= validateInput(quantity, "quantityInput", "number");
+    allValid &= validateInput(price, "priceInput", "number");
+    allValid &= validateInput(description, "descriptionText", "text");
     return allValid;
   };
 
@@ -79,69 +111,69 @@ function AddEditProduct({ product, show, handleSave, handleClose }) {
             Category <br />
             <input
               id="categoryInput"
-              className="Modal-input"
+              className={`Modal-input ${errors.categoryInput}`}
               value={category}
               onChange={(e) => {
                 setCategory(e.target.value);
-                validateInput("categoryInput", "categoryInputError");
+                validateInput(e.target.value, "categoryInput", "text");
               }}
             ></input>
-            <div id="categoryInputError" className="error-container"></div>
+            <div className="error-container">{errorsText.categoryInput}</div>
           </div>
           <div>
             Name <br />
             <input
               id="nameInput"
-              className="Modal-input"
+              className={`Modal-input ${errors.nameInput}`}
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
-                validateInput("nameInput", "nameInputError");
+                validateInput(e.target.value, "nameInput", "text");
               }}
             ></input>
-            <div id="nameInputError" className="error-container"></div>
+            <div className="error-container">{errorsText.nameInput}</div>
           </div>
           <div>
             Quantity <br />
             <input
               id="quantityInput"
               type="number"
-              className="Modal-input"
+              className={`Modal-input ${errors.quantityInput}`}
               value={quantity}
               onChange={(e) => {
                 setQuantity(e.target.value);
-                validateInput("quantityInput", "quantityInputError");
+                validateInput(e.target.value, "quantityInput", "number");
               }}
             ></input>
-            <div id="quantityInputError" className="error-container"></div>
+            <div className="error-container">{errorsText.quantityInput}</div>
           </div>
           <div>
             Price <br />
             <input
               id="priceInput"
               type="number"
-              className="Modal-input"
+              className={`Modal-input ${errors.priceInput}`}
               value={price}
               onChange={(e) => {
                 setPrice(e.target.value);
-                validateInput("priceInput", "priceInputError");
+                validateInput(e.target.value, "priceInput", "number");
               }}
             ></input>
-            <div id="priceInputError" className="error-container"></div>
+            <div className="error-container">{errorsText.priceInput}</div>
           </div>
           <div>
             Description
             <br />
             <textarea
               id="descriptionText"
-              className="Modal-input"
+              className={`Modal-input ${errors.descriptionText}`}
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
-                validateInput("descriptionText", "descriptionTextError");
+                validateInput(e.target.value, "descriptionText", "text");
               }}
             ></textarea>
-            <div id="descriptionTextError" className="error-container"></div>
+            <div className="error-container">{errorsText.descriptionText}</div>
           </div>
         </form>
       </Modal.Body>
