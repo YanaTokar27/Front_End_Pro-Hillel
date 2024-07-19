@@ -1,3 +1,11 @@
 .Modal-input {
     width: 360px;
 }
+
+.validation-error {
+    border: 3px solid red;
+}
+
+.error-container {
+    color: red;
+}
